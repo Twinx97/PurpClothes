@@ -25,15 +25,23 @@ const Navbar = () => {
 
             <div onClick={() => {
                 setOpen(!open);
-            }} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden hover:text-indigo-700 hover:rotate-90 transform-gpu duration-700'>
+            }} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
                 <FaBars style={open ? {display: 'none'}: {display: 'block'}}></FaBars>
                 <MdOutlineClose style={open ? {display: 'block', fontSize: '36px', lineHeight: '40px'}: {display: 'none'}}></MdOutlineClose>
             </div>
-            <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20':'top-[-490px]'}`}>
+            <ul id="test" className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20':'top-[-490px]'} `}>
                 {
                     Links.map((link) => (
                         <li key={link.name} className="md:ml-6 text-xl md:my-0 my-7">
-                            <Link to={link.link} className="text-gray-600 hover:text-indigo-600 duration-500">
+                            <Link to={link.link} className="text-gray-600 hover:text-indigo-600 duration-500" onClick={() => {
+                                let myId = document.getElementById('test');
+                                if(open) {
+                                    myId.classList.add('top-[-490px]');
+                                    setOpen(!open);
+                                } else {
+                                    myId.classList.add('top-20')
+                                }
+                            }}>
                                 {link.name}
                             </Link>
                         </li>
