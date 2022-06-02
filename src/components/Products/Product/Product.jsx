@@ -1,28 +1,33 @@
 import React from 'react';
 import { FaPlus } from "react-icons/fa";
+import Button from '../../Button';
 
-const Product = ({ product }) => {
+
+const Product = ({ product, onAddToCart }) => {
+
   return (
     <div className='flex flex-col'>
-        <div className='w-full h-auto bg-white-400 rounded'>
-          <div className='w-2/3 flex rounded-3xl items-center m-auto'>
-            <img src={product.image} alt={product.imageAlt} />
+
+        <div className='flex-1 w-full rounded'>
+          <div className='w-full h-auto rounded-3xl items-center m-auto'>
+            <img className='w-96 h-48 object-contain' src={product.image.url} />
           </div>
         </div>
-        <div className='flex flex-col items-center py-4 text-lg'>
+
+        <div className='flex-1 flex flex-col items-center py-4 text-lg'>
           <h2 className='text-3xl font-bold'>
             {product.name}
           </h2>
-          <p>
-            {product.description}
-          </p>
-          <p className='text-3xl'>&euro;
-            {product.price}
+          <p dangerouslySetInnerHTML={{ __html:product.description }} className='text-gray-600' />
+          <p className='text-3xl font-bold'>
+            {product.price.formatted_with_symbol}
           </p>
         </div>
-        <div className='flex gap-2 justify-center items-center m-auto mb-4 text-1xl border border-2 py-2 rounded-sm w-2/4'>
-          <FaPlus />
-          <span>Add to Cart </span>
+        <div onClick={() => onAddToCart(product.id, 1)} className='flex-1'>
+          <Button aria-label="Add Product">
+              <FaPlus className='mr-2'/>
+              <span>Add To Cart</span>
+          </Button>
         </div>
     </div>
   )

@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Order = () => {
+
   return (
     <div>
       <div className='bg-blue-600 w-full h-auto p-20'>

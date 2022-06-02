@@ -1,8 +1,8 @@
 import React from 'react';
 import bannerImage from '../assets/backgroundImages/mobile-banner.jpg';
-import ProductsContainer from '../components/Products/ProductsContainer';
+import Products from '../components/Products/Products';
 
-const Home = () => {
+const Home = ({ products }) => {
   return (
     <div>
       <div className='bg-gradient-to-tr from-indigo-900 to-indigo-800 h-96 w-full md:top-0 relative'>
@@ -12,7 +12,7 @@ const Home = () => {
           <p className='text-white text-3xl font-light mb-10'>The Latest Fashion trends have arrived.</p>
         </div>
       </div>
-      <ProductsContainer />
+      <Products products={products}/>
     </div>
   )
 }
