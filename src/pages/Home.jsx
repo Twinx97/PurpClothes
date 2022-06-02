@@ -1,5 +1,6 @@
 import React from 'react';
 import bannerImage from '../assets/backgroundImages/mobile-banner.jpg';
+import ProductsContainer from '../components/Products/ProductsContainer';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
           <p className='text-white text-3xl font-light mb-10'>The Latest Fashion trends have arrived.</p>
         </div>
       </div>
+      <ProductsContainer />
     </div>
   )
 }

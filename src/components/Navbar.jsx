@@ -8,6 +8,7 @@ import { IoCart } from "react-icons/io5";
 const Navbar = () => {
     let Links = [
         {name: "HOME", link: "/"},
+        {name: "PRODUCTS", link: "Products"},
         {name: "CONTACT", link: "Contact"},
         {name: "ORDER", link: "Order"}
     ];
