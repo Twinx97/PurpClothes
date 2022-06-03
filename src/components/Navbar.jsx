@@ -30,18 +30,14 @@ const Navbar = ({ totalItems }) => {
             <div onClick={() => {
                 setOpen(!open);
             }} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden flex items-center gap-3'>
-                <IconButton aria-label='Show Cart Items' color="inherit">
-                    <Badge badgeContent={totalItems} style={{color: "#4f46e5"}}>
-                        <ShoppingCart />
-                    </Badge>
-                </IconButton>
+                
                 <FaBars style={open ? {display: 'none'}: {display: 'block'}}></FaBars>
                 <MdOutlineClose style={open ? {display: 'block'}: {display: 'none'}}></MdOutlineClose>
             </div>
             <ul id="test" className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20':'top-[-490px]'} `}>
                 {
                     Links.map((link) => (
-                        <li key={link.name} className="md:ml-4 text-base md:my-0 my-7">
+                        <li key={link.name} className="md:ml-4 text-base md:my-0 my-4">
                             <Link to={link.link} className="text-gray-800 font-normal text-xl hover:text-indigo-600 duration-500" onClick={() => {
                                 let myId = document.getElementById('test');
                                 if(open) {
@@ -60,6 +56,14 @@ const Navbar = ({ totalItems }) => {
                 <div className='md:hidden flex gap-4 flex-col md:flex-row md:gap-0 pr-10'>
                     <Button aria-label="Sign In">
                         Sign In
+                    </Button>
+                    <Button>
+                    <IconButton aria-label='Show Cart Items' color="inherit">
+                        <Badge badgeContent={totalItems} style={{color: "white"}}>
+                            <ShoppingCart />
+                        </Badge>
+                        <span className='pl-1 text-lg font-medium'>Cart</span>
+                    </IconButton>
                     </Button>
                 </div>
             </ul>
