@@ -7,6 +7,12 @@ import { Badge, IconButton } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
 
 
+const GoBack = () => (
+    <Button>
+        <Link to="/">Back button</Link>
+    </Button>
+);
+
 const Navbar = ({ totalItems }) => {
     const location = useLocation();
 
@@ -58,6 +64,15 @@ const Navbar = ({ totalItems }) => {
                     <Button aria-label="Sign In">
                         Sign In
                     </Button>
+                    <div className="block m-auto">
+                    {location.pathname === '/cart' ? <GoBack /> : (
+                        <IconButton component={Link} to="/cart" aria-label='Show Cart Items' color="inherit">
+                            <Badge badgeContent={totalItems} color="error">
+                                <ShoppingCart />
+                            </Badge>
+                        </IconButton>
+                    )}
+                    </div>
                     
                 </div>
             </ul>
@@ -65,12 +80,12 @@ const Navbar = ({ totalItems }) => {
                     <Button aria-label="Sign In">
                         Sign In
                     </Button>
-                    {location.pathname === '/' && (
-                    <IconButton component={Link} to="/cart" aria-label='Show Cart Items' color="inherit">
-                        <Badge badgeContent={totalItems}>
-                            <ShoppingCart />
-                        </Badge>
-                    </IconButton>
+                    {location.pathname === '/cart' ? null : (
+                        <IconButton component={Link} to="/cart" aria-label='Show Cart Items' color="inherit">
+                            <Badge badgeContent={totalItems} color="error">
+                                <ShoppingCart />
+                            </Badge>
+                        </IconButton>
                     )}
                 </div>
         </div>
