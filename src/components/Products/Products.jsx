@@ -2,8 +2,6 @@ import React from 'react';
 import Product from './Product/Product';
 
 const Products = ({ products, onAddToCart }) => {
-
-
   return (
     <main>
         <div className='grid md:justify-center gap-2 grid-cols-1 md:grid-cols-3 md:p-10'>

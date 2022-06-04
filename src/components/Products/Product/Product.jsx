@@ -2,18 +2,14 @@ import React from 'react';
 import { FaPlus } from "react-icons/fa";
 import Button from '../../Button';
 
-
 const Product = ({ product, onAddToCart }) => {
-
   return (
     <div className='flex flex-col'>
-
         <div className='flex-1 w-full rounded'>
           <div className='w-full h-auto rounded-3xl items-center m-auto'>
-            <img className='w-96 h-48 object-contain' src={product.image.url} />
+            <img className='w-100 h-48 object-contain' src={product.image.url} />
           </div>
         </div>
-
         <div className='flex-1 flex flex-col items-center py-4 text-lg'>
           <h2 className='text-3xl font-bold'>
             {product.name}

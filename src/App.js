@@ -7,10 +7,14 @@ import Contact from './pages/Contact';
 import Order from './pages/Order';
 import Navbar from './components/Navbar';
 import Products from './components/Products/Products';
+import CartPage from "./components/Cart/Cart";
+
 
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+
+
 
   const fetchProducts = async() => {
     const { data } = await commerce.products.list();
@@ -19,14 +23,16 @@ function App() {
   }
 
   const fetchCart = async () => {
-    setCart(await commerce.cart.retrieve());
+    setCart(await commerce.cart.retrieve())
   }
 
   const handleAddToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
 
-    setCart(item.cart)
-  }
+    setCart(item.cart);
+  };
+
+
 
   useEffect(() => {
     fetchProducts();
@@ -36,14 +42,14 @@ function App() {
   return (
     <>
       <Navbar totalItems={cart.total_items} />
-      <div className='mt-20'>
+      <div className='mt-20'></div>
         <Routes>
-          <Route path="/" element={<Home products={products} />} />
+          <Route path="/" element={<Home products={products} onAddToCart={handleAddToCart} />} />
+          <Route path="/cart" element={<CartPage cart={cart} />} />
           <Route path="/products" element={<Products products={products} onAddToCart={handleAddToCart} />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/order" element={<Order />} />
         </Routes>
-      </div>
     </>
   );
 }
