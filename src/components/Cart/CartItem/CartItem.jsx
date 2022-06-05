@@ -4,7 +4,7 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   return (
     <div className='flex flex-col border-4 md:p-2'>
         <div className='w-full'>
-            <img src={item.image.url} className="w-100 h-48 object-contain" />
+            <img src={item.image.url} className="w-100 h-auto md:h-48 object-contain" />
         </div>
         <div className='flex flex-row justify-between text-3xl md:text-xl font-bold px-5'>
             <h5>{item.name}</h5>
