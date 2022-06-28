@@ -1,18 +1,17 @@
 import React from 'react';
-import Button from '../Button';
 import CartItem from './CartItem/CartItem';
 import { Link, useLocation } from 'react-router-dom';
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
 
   const EmptyCart = () => (
-    <>
-      <p className='text-2xl mt-20 text-center'>There are no items in your cart.<br/><br/>
+    <div className='mt-20 h-screen'>
+      <p className='text-2xl text-center'>There are no items in your cart yet.<br/><br/>
         <div className="text-indigo-800 hover:text-indigo-500 font-semibold text-4xl md:text-5xl">
           <Link to="/">Start Adding Products</Link>!
         </div>
       </p>
-    </>
+    </div>
   )
 
   const FilledCart = () => (
@@ -24,7 +23,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
           </div>
         ))}
       </div>
-      <div className='md:flex-1 mt-2 flex flex-col md:flex-row justify-start items-center md:items-start md:flex-col'>
+      <div className='md:flex-1 mt-2 flex flex-col md:flex-row justify-start items-center md:items-center md:flex-col'>
         <h5 className='text-2xl mb-5 md:text-2xl font-semibold md:mb-4'>Subtotal: {cart.subtotal.formatted_with_symbol}</h5>
         <div className='flex gap-10 md:gap-5 justify-between md:justify-start mb-10'>
           <button className='text-white bg-red-600 py-3 px-4 md:px-6 rounded md:ml-0 hover:bg-red-800 duration-500 flex items-center justify-center text-lg md:text-sm font-semibold w-auto' onClick={handleEmptyCart} >Empty Cart</button>

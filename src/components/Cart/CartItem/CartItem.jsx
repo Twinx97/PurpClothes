@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   return (
-    <div className='flex flex-col border-4 md:p-2'>
+    <div className='flex flex-col border-4 md:p-2 min-w-min'>
         <div className='w-full'>
             <img src={item.image.url} className="w-100 h-auto md:h-48 object-contain" />
         </div>

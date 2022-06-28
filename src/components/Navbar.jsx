@@ -15,8 +15,7 @@ const Navbar = ({ totalItems }) => {
     let Links = [
         {name: "Home", link: "/"},
         {name: "Products", link: "Products"},
-        {name: "Contact", link: "Contact"},
-        {name: "Order", link: "Order"}
+        {name: "Contact", link: "Contact"}
     ];
     let [open, setOpen] = useState(false);
   return (
@@ -44,7 +43,7 @@ const Navbar = ({ totalItems }) => {
 
             <div onClick={() => {
                 setOpen(!open);
-            }} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden flex items-center gap-3'>
+            }} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden flex items-center gap-3 hover:rotate-90 hover:text-indigo-600 transition duration-500'>
                 
                 <FaBars style={open ? {display: 'none'}: {display: 'block'}}></FaBars>
                 <MdOutlineClose style={open ? {display: 'block'}: {display: 'none'}}></MdOutlineClose>
@@ -52,8 +51,8 @@ const Navbar = ({ totalItems }) => {
             <ul id="test" className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20':'top-[-490px]'} `}>
                 {
                     Links.map((link) => (
-                        <li key={link.name} className="md:ml-4 text-base md:my-0 my-5">
-                            <Link to={link.link} className="text-gray-700 font-normal text-xl hover:text-indigo-600 duration-500" onClick={() => {
+                        <li key={link.name} className="md:ml-4 text-base md:my-0 my-3">
+                            <Link to={link.link} className="text-black font-light text-xl hover:pt-1 md:focus:border-b-2 hover:border-b-2 hover:border-indigo-700 hover:text-indigo-700" onClick={() => {
                                 let myId = document.getElementById('test');
                                 if(open) {
                                     myId.classList.add('top-[-490px]');
@@ -68,7 +67,7 @@ const Navbar = ({ totalItems }) => {
                     ))
                 }
                 
-                <div className='md:hidden flex gap-4 flex-col md:flex-row md:gap-0 pr-10'>
+                <div className='md:hidden flex mt-10 gap-5 flex-col md:flex-row md:gap-0 pr-10'>
                     <Button aria-label="Sign In">
                         Register
                     </Button>

@@ -8,6 +8,13 @@ The website is hosted on Netlify and updated through Git/GitHub.
 
 # Project Purpose
 
+## What I'll be using in this project:
+React.js
+TypeScript
+Material UI
+TailWindCSS
+Jest
+
 ## Imagine this problem
 A client needs a ecommerce website to sell their products online. They alos need to be able to add, remove and update their products through a content management system.
 

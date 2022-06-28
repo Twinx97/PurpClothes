@@ -4,10 +4,10 @@ import { commerce } from './lib/commerce';
 import './App.css';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import Order from './pages/Order';
 import Navbar from './components/Navbar';
 import Products from './components/Products/Products';
 import CartPage from "./components/Cart/Cart";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -70,8 +70,8 @@ function App() {
           />} />
           <Route path="/products" element={<Products products={products} onAddToCart={handleAddToCart} />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/order" element={<Order />} />
         </Routes>
+        <Footer />
     </>
   );
 }

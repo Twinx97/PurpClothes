@@ -5,7 +5,7 @@ import Products from '../components/Products/Products';
 const Home = ({ products, onAddToCart }) => {
   return (
     <div>
-      <div className='bg-gradient-to-tr from-indigo-900 to-indigo-800 h-96 w-full md:top-0 relative'>
+      <div className='bg-gradient-to-tr from-indigo-800 to-indigo-500 h-96 w-full md:top-0 relative'>
         {/* <img src={bannerImage} className="w-full h-full object-cover absolute mix-blend-overlay" alt="Landing Page image" /> */}
         <div className='p-20 px-10 md:px-20 md:py-20 lg:py-30'>
           <h1 className='text-white text-5xl md:text-7xl mb-2 font-bold'>Upgrade your<br/>wardrobe today!</h1>
