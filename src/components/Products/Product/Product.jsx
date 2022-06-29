@@ -17,7 +17,7 @@ const Product = ({ product, onAddToCart }) => {
           <p dangerouslySetInnerHTML={{ __html:product.description }} className='text-gray-700' />
         </div>
         <div className='flex-1 flex flex-col-reverse items-center'>
-          <div onClick={() => onAddToCart(product.id, 1)} className='w-full mt-4'>
+          <div onClick={() => onAddToCart(product.id, 1)} className='w-4/5 mt-4'>
             <Button aria-label="Add Product">
                 <FaPlus className='mr-2'/>
                 <span>Add To Cart</span>

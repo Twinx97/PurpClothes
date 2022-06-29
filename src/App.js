@@ -8,6 +8,8 @@ import Navbar from './components/Navbar';
 import Products from './components/Products/Products';
 import CartPage from "./components/Cart/Cart";
 import Footer from "./components/Footer";
+import SignIn from "./pages/SignIn";
+import Checkout from "./pages/Checkout";
 
 
 function App() {
@@ -70,6 +72,8 @@ function App() {
           />} />
           <Route path="/products" element={<Products products={products} onAddToCart={handleAddToCart} />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />
     </>

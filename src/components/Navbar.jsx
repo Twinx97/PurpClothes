@@ -68,21 +68,15 @@ const Navbar = ({ totalItems }) => {
                 }
                 
                 <div className='md:hidden flex mt-10 gap-5 flex-col md:flex-row md:gap-0 pr-10'>
-                    <Button aria-label="Sign In">
-                        Register
-                    </Button>
-                    <Button aria-label="Sign In">
-                        Sign In
-                    </Button>
+                    <Link to="SignIn">
+                        <Button>Sign In</Button>
+                    </Link>
                 </div>
             </ul>
             <div className='hidden md:flex ml-auto gap-4 md:gap-5'>
-                    <Button aria-label="Sign In">
-                        Sign In
-                    </Button>
-                    <Button aria-label="Sign In">
-                        Register
-                    </Button>
+                    <Link to="SignIn">
+                        <Button>Sign In</Button>
+                    </Link>
                     {location.pathname === '/cart' ? null : (
                         <IconButton component={Link} to="/cart" aria-label='Show Cart Items' color="inherit">
                             <Badge badgeContent={totalItems} color="error">
