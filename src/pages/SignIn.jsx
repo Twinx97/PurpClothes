@@ -18,11 +18,11 @@ const SignIn = () => {
             </div>
             <Link className='ml-auto text-sm text-gray-600' to="#">Forgot Password?</Link>
           </div>
-          <div className='flex mt-5 items-center gap-5'>
+          <div className='flex flex-col md:flex-row mt-5 items-center gap-5'>
             <button className='bg-indigo-600 text-white font-semibold py-2 px-5 whitespace-nowrap rounded-full w-full hover:bg-indigo-900 duration-500 flex items-center justify-center text-base md:text-sm'>
               Sign In
             </button>
-            <button className='font-semibold w-full py-2 px-5 whitespace-nowrap rounded-full w-auto hover:bg-gray-800 hover:text-white hover:border-gray-900 duration-500 flex items-center justify-center text-base md:text-sm border-2 text-gray-500 border-gray-200'>
+            <button className='font-semibold w-full py-2 px-5 whitespace-nowrap rounded-full md:w-auto hover:bg-gray-800 hover:text-white hover:border-gray-900 duration-500 flex items-center justify-center text-base md:text-sm border-2 text-gray-500 border-gray-200'>
               Create Account
               
             </button>

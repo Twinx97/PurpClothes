@@ -25,10 +25,10 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
       </div>
       <div className='md:flex-1 mt-2 flex flex-col md:flex-row justify-start items-center md:items-center md:flex-col'>
         <h5 className='text-2xl mb-5 md:text-2xl font-semibold md:mb-4'>Subtotal: {cart.subtotal.formatted_with_symbol}</h5>
-        <div className='flex gap-10 md:gap-5 justify-between md:justify-start mb-10'>
+        <div className='flex flex-col-reverse md:flex-row-reverse gap-5 md:gap-10 md:gap-5 justify-between md:justify-start mb-10'>
           <button className='text-white whitespace-nowrap bg-red-600 py-3 px-4 md:px-6 rounded md:ml-0 hover:bg-red-800 duration-500 flex items-center justify-center text-lg md:text-sm font-semibold w-auto' onClick={handleEmptyCart} >Empty Cart</button>
           <Link to="/Checkout">
-            <button className='text-white bg-green-600 py-3 px-14 md:px-12 rounded md:ml-0 hover:bg-green-800 duration-500 flex items-center justify-center text-xl md:text-xl font-semibold w-auto '>Checkout</button>
+          <button className='text-white bg-green-600 py-3 px-14 md:px-12 rounded md:ml-0 hover:bg-green-800 duration-500 flex items-center justify-center text-xl md:text-xl font-semibold w-auto '>Checkout</button>
           </Link>
         </div>
       </div>
@@ -42,7 +42,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
       <div className='grid p-10 md:px-20 md:py-10'>            
         { !cart.line_items.length ? <EmptyCart /> : 
         <>
-          <h3 className='text-5xl font-medium pb-5 md:pb-10 text-center md:text-left'>Shopping Cart</h3>
+          <h3 className='text-4xl md:text-4xl font-medium pb-5 md:pb-10 text-center md:text-left break-words md:whitespace-nowrap'>Shopping Cart</h3>
           <FilledCart />  
         </> }      
       </div>      

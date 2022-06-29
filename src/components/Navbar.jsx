@@ -6,9 +6,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Badge, IconButton } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
 
-
-
-
 const Navbar = ({ totalItems }) => {
     const location = useLocation();
 
@@ -68,7 +65,15 @@ const Navbar = ({ totalItems }) => {
                 }
                 
                 <div className='md:hidden flex mt-10 gap-5 flex-col md:flex-row md:gap-0 pr-10'>
-                    <Link to="SignIn">
+                    <Link to="SignIn" onClick={() => {
+                                let myId = document.getElementById('test');
+                                if(open) {
+                                    myId.classList.add('top-[-490px]');
+                                    setOpen(!open);
+                                } else {
+                                    myId.classList.add('top-20')
+                                }
+                            }}>
                         <Button>Sign In</Button>
                     </Link>
                 </div>
