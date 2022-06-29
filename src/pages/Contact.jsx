@@ -12,7 +12,7 @@ const Contact = () => {
           <input required className='border p-2 rounded py-1 mb-4 placeholder:italic placeholder:text-slate-400' type="email" id="customerEmail" name="email" aria-aria-label='Email' placeholder='Email' />
 
           <textarea required className='border p-2 rounded py-1 mb-5 resize-none placeholder:italic placeholder:text-slate-400' type="textarea" name="message" placeholder='Message...' />
-          <Button type="submit">Send</Button>
+          <button type="submit">Send</button>
         </form>
 
       </div>
