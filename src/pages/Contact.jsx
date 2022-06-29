@@ -6,13 +6,19 @@ const Contact = () => {
     <div className='bg-indigo-200 p-12 md:p-15 flex items-center justify-center'>
       <div className='bg-white w-full md:max-w-xs p-10 rounded-lg'>
         <h1 className='text-3xl text-center mb-10'>Contact Us</h1>
-        <form action="#" className='flex flex-col'>
+        <form name="customerContact" action="POST" data-netlify="true" className='flex flex-col'>
           
-          <input className='border p-2 rounded py-1 mb-4 placeholder:italic placeholder:text-slate-400' type="text" name="email" aria-aria-label='Email' placeholder='Email'/>
-          <input className='border p-2 rounded py-1 mb-4 placeholder:italic placeholder:text-slate-400' type="text" name="Product" aria-label='Product' placeholder='Product'/>
-          <textarea className='border p-2 rounded py-1 mb-5 resize-none placeholder:italic placeholder:text-slate-400' type="textarea" placeholder='Message...' />
-          <Button>Send</Button>
+          <input required className='border p-2 rounded py-1 mb-4 placeholder:italic placeholder:text-slate-400' type="text" id="customerEmail" name="email" aria-aria-label='Email' placeholder='Email'/>
+          <label name="product" className='border p-2 rounded py-1 mb-4 placeholder:italic placeholder:text-slate-400'>Product 
+            <select name="product[]" multiple>
+              <option value="leader">Blue Shirt</option>
+              <option value="follower">Purple Shirt</option>
+            </select>
+          </label>
+          <textarea required className='border p-2 rounded py-1 mb-5 resize-none placeholder:italic placeholder:text-slate-400' type="textarea" name="customerMessage" placeholder='Message...' />
+          <Button type="submit">Send</Button>
         </form>
+
       </div>
   </div>
   )
