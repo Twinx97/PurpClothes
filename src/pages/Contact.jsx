@@ -9,12 +9,6 @@ const Contact = () => {
         <form name="customerContact" action="POST" data-netlify="true" className='flex flex-col'>
           
           <input required className='border p-2 rounded py-1 mb-4 placeholder:italic placeholder:text-slate-400' type="text" id="customerEmail" name="email" aria-aria-label='Email' placeholder='Email'/>
-          <label name="product" className='border p-2 rounded py-1 mb-4 placeholder:italic placeholder:text-slate-400'>Product 
-            <select name="product[]" multiple>
-              <option value="leader">Blue Shirt</option>
-              <option value="follower">Purple Shirt</option>
-            </select>
-          </label>
           <textarea required className='border p-2 rounded py-1 mb-5 resize-none placeholder:italic placeholder:text-slate-400' type="textarea" name="customerMessage" placeholder='Message...' />
           <Button type="submit">Send</Button>
         </form>
