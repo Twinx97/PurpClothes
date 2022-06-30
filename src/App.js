@@ -10,13 +10,12 @@ import CartPage from "./components/Cart/Cart";
 import Footer from "./components/Footer";
 import SignIn from "./pages/SignIn";
 import Checkout from "./pages/Checkout";
+import Thankyou from "./pages/Thankyou";
 
 
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
-
-
 
   const fetchProducts = async() => {
     const { data } = await commerce.products.list();
@@ -74,8 +73,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/thankyou" element={<Thankyou />} />
         </Routes>
-        <Footer />
+        <Footer/>
     </>
   );
 }

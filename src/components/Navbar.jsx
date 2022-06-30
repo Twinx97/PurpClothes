@@ -12,7 +12,7 @@ const Navbar = ({ totalItems }) => {
     let Links = [
         {name: "Home", link: "/"},
         {name: "Products", link: "Products"},
-        {name: "Contact", link: "Contact"}
+        {name: "Contact Us", link: "Contact"}
     ];
     let [open, setOpen] = useState(false);
   return (
